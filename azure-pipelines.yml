@@ -82,7 +82,7 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppNameDev)'
+              appName: '$(Dev)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
 - stage: 'Test'
@@ -105,7 +105,7 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppNameTest)'
+              appName: '$(Test)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
 - stage: 'Staging'
@@ -128,5 +128,5 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppNameStaging)'
+              appName: '$(Staging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
